@@ -10,9 +10,9 @@ fp4: .float 99.5
 	.text
 main:
 	l.s	$f4, fp4	
-	lwc1	$f1, fp1
-	lwc1	$f2, fp2
-	lwc1	$f3, fp3
+	l.s	$f1, fp1
+	l.s	$f2, fp2
+	l.s	$f3, fp3
 	
 	# 	since C = (F - 32)*5/9, we set immediates as the formula
 	#	and 99.5 as the comparison
