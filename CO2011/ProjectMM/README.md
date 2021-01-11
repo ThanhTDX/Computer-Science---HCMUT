@@ -5,9 +5,13 @@
 - Latex bản cuối cùng: https://www.overleaf.com/project/5fefee4159085f01f76a9762
 
 - Công việc:
-  + Quân: Làm câu 2a, sửa lỗi 2b
-  + Thành: Làm câu 1
-  + Trung: Nghiên cứu phương pháp "explicit Euler and Runge-Kutta of order 4" trong 2 quyển sách
-       .  Hairer Ernst, P. Nørsett Syvert, and Wanner Gerhard. Solving Ordinary Differential  Equations I: Nonstiff Prolemns. Springer, 1993
-       .  Hairer Ernst and Wanner Gerhard. Solving Ordinary Differential Equations II: Stiff and Differential-Algebraic Problems. Springer, 1996.
-
+  + Quân, Trung: Làm câu 4a
+    . Quân: Code
+    . Trung: Cung cấp kiến thức
+  + Thành: Làm câu 3
+  + Huy: Làm câu 1
+    (Có 2 phần, 1 là định nghĩa dynamical system, 2 là Euler and rk4
+       .  Dynamical system có thể tra google
+       .  Euler and rk4: từ reference EG96, ESG93
+- Deadline: T5, 14/1
+- Lưu ý: T4, 13/1 sẽ có buổi học bù, yêu cầu mọi người chuẩn bị ít nhất 2 câu hỏi để đặt cho thầy.
