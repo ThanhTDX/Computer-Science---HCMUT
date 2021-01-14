@@ -164,6 +164,56 @@ double MC_AirCan(double M,double P,double R)
     return M*hC_Buf(-1,-1)*P*R;
 }
 
+float dydx(float x, float y)
+{
+    return((x - y)/2);
+}
+float rk4(float x0, float y0, float x, float h)
+{
+    // Count number of iterations using step size or
+    // step height h
+    int n = (int)((x - x0) / h);
+
+    float k1, k2, k3, k4, k5;
+
+    // Iterate for number of iterations
+    float y = y0;
+    for (int i=1; i<=n; i++)
+    {
+        // Apply Runge Kutta Formulas to find
+        // next value of y
+        k1 = h*dydx(x0, y);
+        k2 = h*dydx(x0 + 0.5*h, y + 0.5*k1);
+        k3 = h*dydx(x0 + 0.5*h, y + 0.5*k2);
+        k4 = h*dydx(x0 + h, y + k3);
+
+        // Update next value of y
+        y = y + (1.0/6.0)*(k1 + 2*k2 + 2*k3 + k4);;
+
+        // Update next value of x
+        x0 = x0 + h;
+    }
+
+    return y;
+}
+
+void euler(float x0, float y, float h, float x)
+{
+    float temp = -0;
+
+    // Iterating till the point at which we
+    // need approximation
+    while (x0 < x) {
+        temp = y;
+        y = y + h * func(x0, y);
+        x0 = x0 + h;
+    }
+
+    // Printing approximation
+    cout << "Approximate solution at x = "
+         << x << "  is  " << y << endl;
+}
+
 void dx(double Cap_Co2_Air,double Cap_Co2_Top)///dx function
 {
     double Co2_Air=-1;
@@ -173,6 +223,8 @@ void dx(double Cap_Co2_Air,double Cap_Co2_Top)///dx function
     res.push_back(Co2_Air);
     res.push_back(Co2_Top);
 }
+
+
 int main()
 {
     cout<<"Co2_Air : "<<res[0]<<'\n';
