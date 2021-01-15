@@ -197,6 +197,11 @@ float rk4(float x0, float y0, float x, float h)
     return y;
 }
 
+float func(float x, float y)
+{
+    return (x + y + x * y);
+}
+
 void euler(float x0, float y, float h, float x)
 {
     float temp = -0;
