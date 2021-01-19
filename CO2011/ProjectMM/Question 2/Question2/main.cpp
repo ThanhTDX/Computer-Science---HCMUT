@@ -6,7 +6,7 @@ using namespace std;
 //constants
 const double Aflr=7.8*pow(10,4); /// Area of green house (m2)
 const double g=9.81;///gravitational acceleration(m/s2)
-const double e=2.7182818284590452353602874713;///euler number
+const double e=2.72;///euler number
 const double M_CH20=30.02598; ///
 const double R=8.3114598;///molar gas constant
 const double N_heat_Co2=0.057;///mgCo2/j
@@ -15,17 +15,20 @@ const double phi_pad=0;///no pad
 const double P_blow=0.0f;///not available
 const double Res=0.0;
 //
-double Co2_Air=0.0;///Not available==h_air
-double Co2_Top=0.0;///when init has asssign it ==Co2_Air==mean height of green house minus height from floor to thermal screen
-double Co2_Stom=0.0;
+double Co2_Air=4.7;///==h_air
+double Co2_Top=0.4;///mean height of green house minus height from floor to thermal screen->h_gh-h_air->5.1-4.7
+
 const double Co2_Out=668;///mg/m^3
 double c_maxBuff=20*pow(10,3);///maximum buffer capacity
+double Cr=1.7;///
+
 //
 const double K_thermalScreen=0.25*pow(10,-3);///thermal screen flux coefficient
 double T_Air=6;///or 6.8
 double T_Top=0.0;
 double T_Out=5.4;///or 23.9 'C
-double T_MeanAir=0.0;
+double T_Can=0.21;
+double T_MeanAir=0.1;
 //
 double Cd=0.65;
 double Cw=0.09;
@@ -36,10 +39,10 @@ double M_Air=28.96;
 double h_elevation=1470;
 double Rho_Air=Rho_Air0*pow(e,g*M_Air*h_elevation/293.15*R);///
 //
-const double Rho_Mean=0.0;
-double Rho_1=0.0;
-double Rho_2=0.0;
-double Rho_MeanAir=0.0;
+const double Rho_Mean=0.1;
+double Rho_1=0.1;
+double Rho_2=0.1;
+double Rho_MeanAir=0.1;
 //
 double S_InScr=1;///
 double c_leakage=pow(10,-4);///
@@ -54,12 +57,18 @@ const double vWind=2.9;///
 double N_side=0.0;
 const double N_roof=0.0;
 const double N_roofThr=0.9;///
+const double N_Co2_AirStom=0.67;///
 
 const double Phi_VentForce=0.0;///not available
 double h_Vent=0.97;///
 
 
 vector<double>res(2);//result head is Co2_Air,last is Co2_Top
+
+double Co2_Stom()
+{
+        return N_Co2_AirStom*Co2_Air;
+}
 
 double MC_BlowAir(double U)///3
 {
@@ -79,12 +88,13 @@ double MC_PadAir(double U)///5
 double f_ThermalScreen(double U)///7
 {
     double tempt=(g*(1-U)/2*Rho_MeanAir)*(abs(Rho_Air-Rho_Top));
+    cout<<Rho_Air-Rho_Top<<endl;
     return U*K_thermalScreen*pow(abs(T_Air-T_Top),2/3)+(1-U)*pow(tempt,1/2);
 }
 
 double MC_AirTop()///(6)
 {
-    return f_ThermalScreen(-1)*(Co2_Air-Co2_Top);
+    return f_ThermalScreen(1)*(Co2_Air-Co2_Top);
 }
 
 double crack()///8
@@ -93,10 +103,10 @@ double crack()///8
 
 }
 
-double f_VentRoofSided(double U_roof,double U_side,double cW,double Cd)///10
+double f_VentRoofSided(double U_roof,double U_side)///10
 {
     double tempt=((U_roof*U_roof*U_side*U_side*A_roof*A_roof*A_side*A_side)/(U_roof*U_roof*A_roof*A_roof+U_side*U_side*A_side*A_side))
-    *(2*g*h_SideRoof*(T_Air-T_Out)/T_MeanAir)+(pow((U_roof*A_roof+U_side*A_side)/2,2)*cW*pow(vWind,2));
+    *(2*g*h_SideRoof*(T_Air-T_Out)/T_MeanAir)+(pow((U_roof*A_roof+U_side*A_side)/2,2)*Cw*pow(vWind,2));
     return (Cd/Aflr)*pow(tempt,0.5);
 }
 
@@ -116,19 +126,19 @@ double f_leakage()///12
     }
 }
 
-double ff_VentSide(double U,double Cd,double cW)
+double ff_VentSide(double U)
 {
-    return (Cd*U*A_side*vWind/2*Aflr)*pow(cW,0.5);
+    return (Cd*U*A_side*vWind/2*Aflr)*pow(Cw,0.5);
 }
 
 double f_VentSide(double U)///13
 {
     if(N_roof>=N_roofThr)
     {
-        return N_InsectScreen()*ff_VentSide(-1,-1,-1)+0.5*f_leakage();
+        return N_InsectScreen()*ff_VentSide(1)+0.5*f_leakage();
     }else
     {
-        return N_InsectScreen()*(U*ff_VentSide(-1,-1,-1)+(1-U)*f_VentRoofSided(-1,-1,-1,-1)*N_side)+0.5*f_leakage();
+        return N_InsectScreen()*(U*ff_VentSide(1)+(1-U)*f_VentRoofSided(1,1)*N_side)+0.5*f_leakage();
     }
 }
 
@@ -139,7 +149,7 @@ double f_VentForced(double U)///14
 
 double MC_AirOut()///9
 {
-    return (f_VentForced(-1)+f_VentSide(-1))*(Co2_Air-Co2_Out);
+    return (f_VentForced(1)+f_VentSide(1))*(Co2_Air-Co2_Out);
 }
 double ff_VentRoof(double U)///17
 {
@@ -151,11 +161,11 @@ double f_VentRoof(double U)///16
 {
     if(N_roof>=N_roofThr)
     {
-        return N_InsectScreen()*ff_VentSide(-1,-1,-1)+0.5*f_leakage();
+        return N_InsectScreen()*ff_VentSide(1)+0.5*f_leakage();
     }
     else
     {
-        return N_InsectScreen()*(U*ff_VentRoof(-1)+(1-U)*f_VentRoofSided(-1,-1,-1,-1)*N_roof)+0.5*f_leakage();
+        return N_InsectScreen()*(U*ff_VentRoof(1)+(1-U)*f_VentRoofSided(1,1)*N_roof)+0.5*f_leakage();
     }
 }
 
@@ -176,11 +186,20 @@ double hC_Buf(double c_Buff)///19
 }
 double P()
 {
-    return (Co2_Air-Co2_Stom)/res;
+    double res=(Co2_Air-Co2_Stom())/res;
+    return res;
 }
-double MC_AirCan(double P,double R)///18
+double r()
 {
-    return M_CH20*hC_Buf(-1)*(P-R);
+    return Cr*T_Can;
+}
+double Rate()
+{
+    return P()*r()/Co2_Stom();
+}
+double MC_AirCan()///18
+{
+    return M_CH20*hC_Buf(-1)*(P()-Rate());
 }
 
 float dydx(float x, float y)
@@ -240,17 +259,18 @@ void euler(float x0, float y, float h, float x)
 
 void dx(double Cap_Co2_Air,double Cap_Co2_Top)///dx function
 {
-    double Co2_Air=-1;
-    double Co2_Top=-1;
-    Co2_Air=(MC_BlowAir(1)+MC_ExtAir(1)+MC_PadAir(1)-MC_AirCan(-1,-1)-MC_AirTop()-MC_AirOut())/Cap_Co2_Air;
-    Co2_Top=MC_AirTop()-MC_TopOut();
-    res.push_back(Co2_Air);
-    res.push_back(Co2_Top);
+    double Co2d_Air=-1;
+    double Co2d_Top=-1;
+    Co2d_Air=(MC_BlowAir(1)+MC_ExtAir(1)+MC_PadAir(1)-MC_AirCan()-MC_AirTop()-MC_AirOut())/Cap_Co2_Air;
+    Co2d_Top=MC_AirTop()-MC_TopOut();
+    res.push_back(Co2d_Air);
+    res.push_back(Co2d_Top);
 }
 
 
 int main()
 {
-    cout<<Aflr;
+    cout<<Rho_Air;
+    //cout<<"Co2 air: "<<res[0]<<"\nCo2 top: "<<res[1];
     return 0;
 }

@@ -1,1 +1,2 @@
-
+bug: f_thermal returns NaN: calculate a 0/0;
+bug expected in Rho_Air: the result is infinite-> find a way to round up or down the number
