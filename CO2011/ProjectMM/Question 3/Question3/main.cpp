@@ -14,6 +14,7 @@ const double phi_ext_Co2=4.3*pow(10,5);///third party ability to pump Co2 mg/s
 const double phi_pad=0;///no pad
 const double P_blow=0.0f;///not available
 const double Res=0.0;
+const double Cap_Top=0.0f;//heat capacity of top compartment
 //
 double Co2_Air=4.7;///==h_air
 double Co2_Top=0.4;///mean height of green house minus height from floor to thermal screen->h_gh-h_air->5.1-4.7
