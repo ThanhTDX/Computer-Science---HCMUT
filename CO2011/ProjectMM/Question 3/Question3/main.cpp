@@ -280,7 +280,7 @@ vector<double> dx(double Cap_Co2_Air,double Cap_Co2_Top)///dx function
 int main()
 {
     vector<double> res=dx(Cap_Co2_Air,Cap_Co2_Top);
-    cout<<Co2_Air<<endl;
+    cout<<Rho_Air<<endl;
     euler(0,Co2_Air,0.083f,0.5f);
     for(auto i: co2_air_t)
     {
