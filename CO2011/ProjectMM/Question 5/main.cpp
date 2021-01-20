@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <iomanip>
 #include <cmath>
 ///no pad and fan and fog
 using namespace std;
@@ -257,24 +259,26 @@ vector<double> dx()
     double VP_Top=(MV_AirTop()-MV_TopCovIn()-MV_TopOut())/Cap_VPTop();
     res.push_back(VP_Air);
     res.push_back(VP_Top);
+    return res;
 }
 
 float func(float x, float y)
-{
+{//predetermin function to calculate x+y+x*y
     return (x + y + x * y);
 }
 
 void euler(float x0, float y, float h, float x,vector<double>& tempt)
 {
     float temp = 0;
-
     // Iterating till the point at which we
     // need approximation
-    while (x0 < x) {
-        temp = y;
-        y = y + h * func(x0, y);
-        x0 = x0 + h;
-        tempt.push_back(y);
+    while (x0 < x) {//for loop until the final step is reached
+        temp = y;//tempt= y
+        y = y + h * func(x0, y);//using euler formula to calculate the result
+        //after calculation
+        x0 = x0 + h;//increase step
+        tempt.push_back(y);//put the result of each step into a vector of float
+        //this way we can check the answer of every step
     }
 }
 
@@ -288,12 +292,22 @@ for(auto i: t)
 
 int main()
 {
-    vector<double> res;
-    res=dx();
-    cout<<VP_Air<<endl;
-    euler(0,VP_Air,0.5,40,VP_Air_t);
-    euler(0,VP_Top,0.5,40,VP_Top_t);
-
-
+    euler(0,VP_Air,0.016,0.3,VP_Air_t);
+    euler(0,VP_Top,0.016,0.3,VP_Top_t);
+    ofstream myfile ("output.txt");
+    ofstream file("output.txt");
+    int counter=1;
+    if(file.is_open())
+    {
+        file<<setw(14)<<"VP_Air"<<setw(10)<<"VP_Top"<<'\n';
+        for(int i=0;i<VP_Air_t.size();i++)
+        {
+            VP_Air=VP_Air_t[i];
+            VP_Top=VP_Top_t[i];
+            vector<double> res=dx();
+            file<<"Step "<<counter<<':'<<res[0]<<setfill('.')<<setw(10)<<res[1]<<endl;
+            counter++;
+        }
+    }
     return 0;
 }
