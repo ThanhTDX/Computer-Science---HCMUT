@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------------------
 This is our work and project for the big Assignment in class Mathematical Modelling by Mr. Nguyễn An Khương (CO2011 - CC05)
-
+Final Overleaf product: https://www.overleaf.com/project/6006919622e3d682e31985f9
 Starting date:
 Ending date: 20/1/2021
 
