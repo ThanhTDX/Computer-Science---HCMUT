@@ -1,20 +1,27 @@
 ------------------------------------------------------------------------------------------
-Đây là BTL của lớp Mô Hình Hóa Toán Học của thầy Nguyễn An Khương (CO2011 - CC05)
+This is our work and project for the big Assignment in class Mathematical Modelling by Mr. Nguyễn An Khương (CO2011 - CC05)
 
-Ngày khởi tạo: 
-Ngày kết thúc: 20/1/2021
+Starting date:
+Ending date: 20/1/2021
 
-Danh sách thành viên
+List of members
 - Nguyễn Duy Thành
 - Ủ Minh Quân
 - Đỗ Đức Trung
 - Lê Huy Hoàng
 
-Nhật ký công việc:
+Journal:
 
-- Tuần 1:
-- Tuần 2:
-- Tuần 3:
-- Tuần 4:
-- Tuần 5:
-- Tuần 6:
+- Week 1: Creating group of 3 members, Thành, Quân and Trung
+  + Doing question 1 and 2
+  + Reading reference Van11 and research on data
+- Week 2:
+- Week 3: 
+  + Code implementation on question 2 and 4a
+- Week 4: Welcoming new member - Lê Huy Hoàng, starting work on Question 5.
+- Week 5: 
+  + Relearning dynamical system (via TA Class made by Mr. Khương
+  + Remaking Question 1 
+  + Small update on Question 3
+  + Continue work on 
+- Week 6: Implementing work on PDF, double checking syntax/semantic error.
