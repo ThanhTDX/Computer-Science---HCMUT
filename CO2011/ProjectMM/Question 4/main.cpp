@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
+#include <fstream>
 #include <vector>
+#include <iomanip>
 using namespace std;
 ///using texas data set in [Van11]
 //constants
@@ -14,16 +16,15 @@ const double N_heat_Co2=0.057;///mgCo2/j
 const double phi_ext_Co2=4.3*pow(10,5);///third party ability to pump Co2 mg/s
 const double phi_pad=0;///no pad
 const double P_blow=0.0f;///not available
-const double Res=0.0;
 const double Cap_Top=0.0f;//heat capacity of top compartment
 //
-double Co2_Air=7.1;///
-double Co2_Top=6.1;///
+double Co2_Air=7.1;///CO2 Air
+double Co2_Top=6.1;///CO2 Top was initialize to be Co2_Air-1
 
-double Cap_Co2_Air=4.7;///=h_air
-double Cap_Co2_Top=0.4;///h_mean-h_air
+double Cap_Co2_Air=4.7;///=h_air[Van11]
+double Cap_Co2_Top=0.4;///h_mean-h_air[Van11]
 
-const double Co2_Out=668;///mg/m^3
+const double Co2_Out=668;///mg/m^3 assumed to be
 double c_maxBuff=20*pow(10,3);///maximum buffer capacity
 double Cr=1.7;///
 
@@ -32,19 +33,19 @@ const double K_thermalScreen=0.25*pow(10,-3);///thermal screen flux coefficient
 double T_Air=6;///or 6.8
 double T_Top=5;///T_top = T_air +- 1
 double T_Out=5.4;///or 23.9 'C
-double T_Can=7;
-double T_MeanAir=0.5;
-double T_ThrScr=7;
+double T_Can=7;///T_Can , T_ThrScr was assumed to be T_Air since constant
+double T_MeanAir=0.5;///temperature was given as a condition
+double T_ThrScr=7;///
 //
-double Cd=0.65;
-double Cw=0.09;
+double Cd=0.65;///equal discharge coefficient C_gh_d
+double Cw=0.09;///equal global wind pressure coefficient C_gh_w
 
 //
-double Rho_Air0=1.2;
-double M_Air=28.96;
-double h_elevation=1470;
+double Rho_Air0=1.2;///
+double M_Air=28.96;///
+double h_elevation=1470;///
 double Rho_Air=Rho_Air0*pow(e,g*M_Air*h_elevation/(293.15*R));///
-double Rho_Top=Rho_Air-1;
+double Rho_Top=Rho_Air-1;///constant air density
 //
 const double Rho_Mean=0.1;
 double Rho_1=0.1;
@@ -208,7 +209,7 @@ double MC_AirCan()///18
 }
 
 float dydx(float x, float y)
-{
+{//predetermine formula to calculate the mean of x ,y
     return((x - y)/2);
 }
 float rk4(float x0, float y0, float x, float h)
@@ -241,26 +242,23 @@ float rk4(float x0, float y0, float x, float h)
 }
 
 float func(float x, float y)
-{
+{//predetermin function to calculate x+y+x*y
     return (x + y + x * y);
 }
 
-void euler(float x0, float y, float h, float x)
+void euler(float x0, float y, float h, float x,vector<double>& tempt)
 {
-    float temp = -0;
-
+    float temp = 0;
     // Iterating till the point at which we
     // need approximation
-    while (x0 < x) {
-        temp = y;
-        y = y + h * func(x0, y);
-        x0 = x0 + h;
-        co2_air_t.push_back(y);
+    while (x0 < x) {//for loop until the final step is reached
+        temp = y;//tempt= y
+        y = y + h * func(x0, y);//using euler formula to calculate the result
+        //after calculation
+        x0 = x0 + h;//increase step
+        tempt.push_back(y);//put the result of each step into a vector of float
+        //this way we can check the answer of every step
     }
-
-    // Printing approximation
-    cout << "Approximate solution at x = "
-         << x << "  is  " << y << endl;
 }
 
 vector<double> dx(double Cap_Co2_Air,double Cap_Co2_Top)///dx function
@@ -272,25 +270,31 @@ vector<double> dx(double Cap_Co2_Air,double Cap_Co2_Top)///dx function
     Co2d_Top=MC_AirTop()-MC_TopOut();
     res.push_back(Co2d_Air);
     res.push_back(Co2d_Top);
-    cout<<res[0]<<" | "<<res[1]<<'\n';
     return res;
 }
 
 
 int main()
 {
-    vector<double> res=dx(Cap_Co2_Air,Cap_Co2_Top);
-    cout<<Co2_Air<<endl;
-    euler(0,Co2_Air,0.083f,0.5f);
-    for(auto i: co2_air_t)
+    //a vector to hold the final result
+    ofstream myfile ("output.txt");//output to file
+    euler(0,Co2_Air,0.016,0.3,co2_air_t);//using euler to init the Co2_Air and Co2_Top
+    //the step is 1 minute, raise Co2_Air and Co2_Top until the 20th step which is 20 minute.
+    ofstream file("output.txt");
+    int counter=1;
+    if(file.is_open())
     {
-        cout<<i<<" ";
+        file<<setw(14)<<"Co2_Air"<<setw(10)<<"Co2_Top"<<'\n';
+        for(auto i: co2_air_t)
+        {
+            Co2_Air=i;
+            Co2_Top=Co2_Air;
+            vector<double> res=dx(Cap_Co2_Air,Cap_Co2_Top);
+            file<<"Step "<<counter<<':'<<res[0]<<setfill('.')<<setw(10)<<res[1]<<endl;
+            counter++;
+        }
     }
-    for(auto i: co2_air_t)
-    {
-        Co2_Air=i;
-        Co2_Top=Co2_Air;
-        dx(Cap_Co2_Air,Cap_Co2_Top);
-    }
+
+
     return 0;
 }
