@@ -68,12 +68,12 @@ double P_MechCool=0.0f;///not available
 double T_MechCool=0.0f;///
 double VP_MechCool=0.0f;///
 double phi_fog=0.0f;///
-double VP_Can=999.74;///Pa
-double VP_Air=679.8;///Pa
-double VP_ThrScr=999.74;///Pa
-double VP_Top=554.4;///Rh=(VP/VPsaturate)*100% 679.8
-double VP_Out=600;///Pa
-double VP_CovIn=999.74;///Pa
+double VP_Can=101.94;///Pa
+double VP_Air=69.3;///Pa
+double VP_ThrScr=101.94;///Pa
+double VP_Top=56.5;///Rh=(VP/VPsaturate)*100% 679.8
+double VP_Out=61.182;///Pa
+double VP_CovIn=101.94;///Pa
 //
 const double A_roof=1.4*pow(10,4);///
 const double A_side=0.0;///
