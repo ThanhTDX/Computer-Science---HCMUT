@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1615193664 source:c:\users\acer\desktop\hmm\bk\compiling\coding\assignment0\main.cpp
+	"firstFight.h"
+
+1615196978 c:\users\acer\desktop\hmm\bk\compiling\coding\assignment0\firstfight.h
+	<iostream>
+	<iomanip>
+	<cmath>
+	<string>
+	<fstream>
+
