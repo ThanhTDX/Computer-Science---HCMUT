@@ -146,7 +146,7 @@ int getReady(int& HP, const int& ID, int& M, const int& E1){
         int MG[2] = {190 + 5*(E1%4), 5 + 2*(E1%4)};
         //Thinking MG as MG0, MG1, MG2, MG3 is easier
         //Since you can compare it to E1%4
-        if ((M%2) != (E1%2) || ID == 1 || ID == 2)
+        if ((M%2) != (MG[0]%2) || ID != 0)
         {
             if (M >= MG[0])
             {
