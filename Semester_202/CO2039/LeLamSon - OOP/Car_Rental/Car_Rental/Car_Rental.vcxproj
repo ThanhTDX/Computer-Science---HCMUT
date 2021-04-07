@@ -142,6 +142,7 @@
     <ClCompile Include="Car_Rental.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Classes2.h" />
     <ClInclude Include="Contract.h" />
     <ClInclude Include="Classes.h" />
   </ItemGroup>

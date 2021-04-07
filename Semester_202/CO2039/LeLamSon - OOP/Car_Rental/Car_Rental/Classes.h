@@ -20,15 +20,15 @@ public:
 class Customer
 {
 private:
-	std::string name;
-	int ID;
-	long int phone;
+	enum Attributes
+	{
+		name,
+		ID,
+		phone,
+	};
 public:
 	Customer();
-	Customer(std::string newName, int newID, long int newPhone);
-	Customer(std::string newName);
-	Customer(int newID);
-	Customer(long int newPhone);
+	Customer(Attributes newCustomer);
 
 	~Customer();
 };
@@ -36,15 +36,16 @@ public:
 class Car
 {
 private:
-	int ID;
-	std::string type;
+	enum Attributes
+	{
+		ID,
+		type,
+	};
 protected:
 	bool storage.isAvailable();
 public:
 	Car();
-	Car(int newID, std::string newType);
-	Car(int newID);
-	Car(std::string newType);
+	Car(Attributes newCar);
 
 	~Car();
 };
@@ -52,13 +53,15 @@ public:
 class Condition
 {
 private:
-	int borrowDate;
-	int returnDate;
-	std::string returnLocation;
+	enum details
+	{
+		borrowDate,
+		returnDate,
+		returnLocation,
+	};
 public:
-	Condition(int bDate, int rDate, std::string rLocation);
-	Condition(int bDate, int rDate);
-	Condition(std::string rLocation);
+	Condition();
+	Condition(details information);
 
 	~Condition();
 };

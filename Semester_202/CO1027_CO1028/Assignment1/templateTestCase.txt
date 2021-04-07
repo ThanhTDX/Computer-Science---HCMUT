@@ -1,0 +1,30 @@
+3										//NID
+VUA123									//ID[0]
+abcdef									//ID[1]
+12rff									//ID[2]
+2										//N1
+10 1111 1010							//input1[0]
+11 01 1010								//input1[1]
+helloCSE, this is CSE ASM				//input2[0]
+CSE										//input2[1]
+12 9 ULDULLD							//input3
+V(V(0))									//input4[0]
+V(0)									//input4[1]
+3										//N5
+ABCDEF									//input5[0]
+GHEABC									//input5[1]
+HGCBAE									//input5[2]
+0010000000								//input6[0]
+1100000000								//input6[1]
+1011100000								//input6[2]
+0002000000								//input6[3]
+1000000000								//input6[4]
+1100000000								//input6[5]
+1101000000								//input6[6] 
+1100002000								//input6[7]
+1100000001								//input6[8]
+0000000000								//input6[9]
+2										//N7
+2 12 1 1								//input7Matrix
+1 2 3 4									//input7[0]
+2 3 4 5									//input7[1]
