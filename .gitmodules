@@ -1,0 +1,6 @@
+[submodule "Semester_202/CO2017_CO2018/CO2018-Assignment"]
+	path = Semester_202/CO2017_CO2018/CO2018-Assignment
+	url = https://github.com/ThanhTDX/CO2018-Assignment.git
+[submodule "Semester_202/MT2013/MT2013-ASG"]
+	path = Semester_202/MT2013/MT2013-ASG
+	url = https://github.com/Smithienious/MT2013-ASG.git

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4158cf032e83da3565ad6ce4ae103fcb9e034c58
 #include "queue.h"
 #include <pthread.h>
 #include <unistd.h>
@@ -23,12 +26,23 @@ void * cpu(void * arg) {
 	while (!load_done || !empty(&ready_queue)) {
 		/* Pickup the first process from the queue */
 		struct pcb_t * proc = de_queue(&ready_queue);
+<<<<<<< HEAD
 		if (proc == NULL) {
+=======
+		if (proc == NULL) 
+		{
+>>>>>>> 4158cf032e83da3565ad6ce4ae103fcb9e034c58
 			/* If there is no process in the queue then we
 			 * wait until the next time slice */
 			timestamp++;
 			usleep(TIME_UNIT);
+<<<<<<< HEAD
 		}else{
+=======
+		}
+		else
+		{
+>>>>>>> 4158cf032e83da3565ad6ce4ae103fcb9e034c58
 			/* Execute the process */
 			int start = timestamp; 	// Save timestamp
 			int id = proc->pid;	// and PID for tracking
@@ -36,10 +50,20 @@ void * cpu(void * arg) {
 			 * on the process and write it to 'exec_time'.
 			 * It should not exeed 'timeslot'.
 			*/
+<<<<<<< HEAD
 			int exec_time = 0;
 
 			// TODO: Calculate exec_time from process's PCB
 			
+=======
+			// TODO: Calculate exec_time from process's PCB
+			int exec_time = 0;
+			if (proc->burst_time > timeslot)
+				exec_time = timeslot;
+			else 
+				exec_time = proc->burst_time;
+			proc->burst_time -= timeslot;
+>>>>>>> 4158cf032e83da3565ad6ce4ae103fcb9e034c58
 			// YOUR CODE HERE
 			
 			/* Emulate the execution of the process by using
@@ -52,7 +76,16 @@ void * cpu(void * arg) {
 			// TODO: Check if the process has terminated (i.e. its
 			// burst time is zero. If so, free its PCB. Otherwise,
 			// put its PCB back to the queue.
+<<<<<<< HEAD
 			
+=======
+			if (proc->burst_time <= 0) 
+			{
+				free(proc);
+				proc = NULL;
+			}
+			else en_queue(&ready_queue, proc);
+>>>>>>> 4158cf032e83da3565ad6ce4ae103fcb9e034c58
 			// YOUR CODE HERE
 			
 			/* Track runtime status */
@@ -60,7 +93,11 @@ void * cpu(void * arg) {
 		}
 	}
 }
+<<<<<<< HEAD
 
+=======
+// Move a process from in_queue to ready_queue
+>>>>>>> 4158cf032e83da3565ad6ce4ae103fcb9e034c58
 // Emulate the loader
 void * loader(void * arg) {
 	int timestamp = 0;
@@ -76,6 +113,10 @@ void * loader(void * arg) {
 	}
 	/* We have no process to load */
 	load_done = 1;
+<<<<<<< HEAD
+=======
+	return NULL;
+>>>>>>> 4158cf032e83da3565ad6ce4ae103fcb9e034c58
 }
 
 /* Read the list of process to be executed from stdin */
@@ -107,6 +148,11 @@ int main() {
 	pthread_create(&cpu_id, NULL, cpu, NULL);
 	/* Start loader */
 	pthread_create(&loader_id, NULL, loader, NULL);
+<<<<<<< HEAD
+=======
+	
+	
+>>>>>>> 4158cf032e83da3565ad6ce4ae103fcb9e034c58
 
 	/* Wait for cpu and loader */
 	pthread_join(cpu_id, NULL);
