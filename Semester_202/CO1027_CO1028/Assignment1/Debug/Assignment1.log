@@ -1,2 +1,0 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1097,5): warning MSB8027: Two or more files with the name of main.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are main.cpp, Sample_Code\ver1\main.cpp.
-  Assignment1.vcxproj -> C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO1027_CO1028\Assignment1\Debug\Assignment1.exe
