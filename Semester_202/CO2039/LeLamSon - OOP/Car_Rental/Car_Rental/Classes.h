@@ -2,50 +2,69 @@
 #ifndef CLASSES_H
 #define CLASSES_H
 
-class Contract
+
+class BookAndRent
+{
+	virtual void bookACar();
+	virtual void SignAContract();
+};
+
+class Contract : public BookAndRent
 {
 private:
 	Customer guest;
 	Car item;
-	Condition rules;
+
 public:
-	Contract();
+	void bookACar();
+	Contract()
+	{
+		guest = new Guest();
+		item = new Car();
+	}
 	Contract(Customer newGuest);
 	Contract(Car newItem);
 	Contract(Customer newGuest, Car newItem);
 
-	~Contract();
+	~Contract()
+	{
+		delete guest;
+	}
 };
+
 
 class Customer
 {
 private:
-	enum Attributes
-	{
-		name,
-		ID,
-		phone,
-	};
+	int age;
+	std::string name;
+	std::string address;
+	std::string license;
+	int DOB;
 public:
-	Customer();
-	Customer(Attributes newCustomer);
+	Customer()
+	{
+		age = -1;
+		name = ' ';
+		address = ' ';
+	}
+	Customer(int age, std::string name, std::string address, std::string)
+	{
+
+		this->age = age;
+		this->name = name;
+	}
 
 	~Customer();
 };
 
-class Car
+class Vehicle
 {
 private:
-	enum Attributes
-	{
-		ID,
-		type,
-	};
 protected:
-	bool storage.isAvailable();
 public:
-	Car();
-	Car(Attributes newCar);
+	Vehicle();
+	Vehicle(Attributes newCar);
 
 	~Car();
 };
@@ -53,12 +72,6 @@ public:
 class Condition
 {
 private:
-	enum details
-	{
-		borrowDate,
-		returnDate,
-		returnLocation,
-	};
 public:
 	Condition();
 	Condition(details information);

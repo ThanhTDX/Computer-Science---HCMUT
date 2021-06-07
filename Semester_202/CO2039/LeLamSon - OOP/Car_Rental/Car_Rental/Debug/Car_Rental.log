@@ -1,22 +1,30 @@
 ﻿  Car_Rental.cpp
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(8,11): error C3646: 'guest': unknown override specifier
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(8,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(9,6): error C3646: 'item': unknown override specifier
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(9,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(10,12): error C3646: 'rules': unknown override specifier
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(10,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(13,11): error C2061: syntax error: identifier 'Customer'
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(13,10): error C2535: 'Contract::Contract(void)': member function already defined or declared
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(12): message : see declaration of 'Contract::Contract'
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(14,11): error C2061: syntax error: identifier 'Car'
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(14,10): error C2535: 'Contract::Contract(void)': member function already defined or declared
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(12): message : see declaration of 'Contract::Contract'
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(15,11): error C2061: syntax error: identifier 'Customer'
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(15,10): error C2535: 'Contract::Contract(void)': member function already defined or declared
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(12): message : see declaration of 'Contract::Contract'
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(42,14): error C3927: '->': trailing return type is not allowed after a non-function declarator
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(42,14): error C3484: syntax error: expected '->' before the return type
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(42,15): error C3613: missing return type after '->' ('int' assumed)
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(42,15): error C3646: 'isAvailable': unknown override specifier
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(42,27): error C2059: syntax error: ')'
-C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(42,28): error C2238: unexpected token(s) preceding ';'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(14,11): error C3646: 'guest': unknown override specifier
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(14,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(15,6): error C3646: 'item': unknown override specifier
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(15,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(16,12): error C3646: 'rules': unknown override specifier
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(16,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(21,11): error C2061: syntax error: identifier 'Customer'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(21,10): error C2535: 'Contract::Contract(void)': member function already defined or declared
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(20): message : see declaration of 'Contract::Contract'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(22,11): error C2061: syntax error: identifier 'Car'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(22,10): error C2535: 'Contract::Contract(void)': member function already defined or declared
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(20): message : see declaration of 'Contract::Contract'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(23,11): error C2061: syntax error: identifier 'Customer'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(23,10): error C2535: 'Contract::Contract(void)': member function already defined or declared
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(20): message : see declaration of 'Contract::Contract'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(42,11): error C2061: syntax error: identifier 'Attributes'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(42,10): error C2535: 'Customer::Customer(void)': member function already defined or declared
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(36): message : see declaration of 'Customer::Customer'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(56,10): error C2061: syntax error: identifier 'Attributes'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(56,9): error C2535: 'Vehicle::Vehicle(void)': member function already defined or declared
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(55): message : see declaration of 'Vehicle::Vehicle'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(58,6): error C2523: 'Vehicle::~Car': destructor tag mismatch
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(66,12): error C2061: syntax error: identifier 'details'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(66,11): error C2535: 'Condition::Condition(void)': member function already defined or declared
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(65): message : see declaration of 'Condition::Condition'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Contract.h(9,16): error C2011: 'Contract': 'class' type redefinition
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(11): message : see declaration of 'Contract'
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Contract.h(14,16): error C2011: 'Customer': 'class' type redefinition
+C:\Users\trant\Desktop\Computer-Science---HCMUT\Semester_202\CO2039\LeLamSon - OOP\Car_Rental\Car_Rental\Classes.h(29): message : see declaration of 'Customer'

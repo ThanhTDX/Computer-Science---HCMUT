@@ -1,0 +1,15 @@
+dataStructure.h --> fundamental base
+ArrayDataController.h --> TODO part. basically a Linked List
+SLLDataController.h --> TODO part. A 2nd Linked List?
+
+task0-4.h --> no TODO. But has different requirements. Double check
+
+thirdBattle.h --> TODO part. Very important, be careful
+
+final product:
++	SLLDataController.h
++	ArrayDataController.h
++	thirdBattle.h
+
+
+- Task0: SLLDataController + ArrayDataController: Constructing the linked list

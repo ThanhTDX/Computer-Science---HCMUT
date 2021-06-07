@@ -10,32 +10,37 @@ protected:
     string type;
     string name;
 public:
-    Vehicle(float cost, const string& type, const string& name)
+    Vehicle(float mcost, const string& mtype, const string& mname)
         :cost(cost), type(type), name(name)
     {
-
+        cost = mcost;
+        type = mtype;
+        name = mname;
     };
-    string GetName()const
+    string GetName()
     {
         return name;
     }
-    string GetType()const
+    string GetType()
     {
         return type;
     }
-    float GetPrice()const
+    float GetPrice()
     {
         return cost;
     }
     virtual void CanRun() = 0;
 };
+
 class Car : public Vehicle
 {
 public:
-    Car(float cost, const string& type, const string& name)
+    Car(float mcost, const string& mtype, const string& mname)
         :Vehicle(cost, type, name)
     {
-
+        cost = mcost;
+        type = mtype;
+        name = mname;
     }
     void CanRun()
     {
@@ -51,9 +56,20 @@ private:
     string email;
     string address;
 public:
-    Driver(string name, int age, string email, string address)
-        :name(name), age(age), email(email), address(address)
+    Driver()
     {
+        name = " ";
+        age = -1;
+        email = " ";
+        address = " ";
+    }
+    Driver(string mname, int mage, string memail, string maddress)  :   name(name), age(age), email(email), address(address)
+    {
+        Driver newDriver = new Driver();
+        newDriver.name = mname;
+        newDriver.age = mage;
+        newDriver.email = memail;
+        newDriver.address = maddress;
     };
     void SetName(const string& iname)
     {
@@ -78,6 +94,10 @@ public:
     string GetAddress()const
     {
         return address;
+    }
+    ~Driver()
+    {
+        delete newDriver;
     }
 };
 class Garage
@@ -134,6 +154,9 @@ public:
         {
 
         }
+    }
+    ~RentalContract()
+    {
     }
 };
 

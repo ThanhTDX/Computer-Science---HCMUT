@@ -6,9 +6,23 @@
 #include <iostream>
 #include "Classes.h"
 
-class Contract;
-class Customer;
-class Car;
-class Condition;
+class Contract {
+
+};
+
+
+class Customer {
+
+};
+
+
+class Car {
+
+};
+
+
+class rentalContract {
+
+};
 
 #endif CONTRACT_H
