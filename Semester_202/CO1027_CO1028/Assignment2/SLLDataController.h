@@ -33,8 +33,12 @@ bool empty(SLinkedList& list) {
     else return false;
 }
 
+int size(SLinkedList& list){   
+    return list.size;
+}
+
 bool insertAt (SLinkedList& list, Soldier element, int pos){
-    if (pos < 0 || pos > list.size) return false;
+    if (pos < 0 || pos > list.size - 1) return false;
     list.size++;
     SoldierNode* newSoldier = new SoldierNode(element, NULL);
     //Check if pos is 0 - insert at first element.
@@ -59,7 +63,9 @@ bool insertAt (SLinkedList& list, Soldier element, int pos){
 
 bool removeAt (SLinkedList& list, int idx){
     SoldierNode* ptr = list.head;
-    //If list is empty
+    //If 
+    //+ idx invalid
+    //+ idx > size (this checks if list is empty)
     if (idx < 0 ||idx > list.size - 1) return false;
 
     //idx = 0, delete the head
@@ -71,7 +77,7 @@ bool removeAt (SLinkedList& list, int idx){
         return true;
     }
 
-    //other cases (idx > list.size return false)
+    //other cases (idx > list.size - 1 return false)
     while (idx > 1)
     {
         ptr = ptr->next;
@@ -86,20 +92,16 @@ bool removeAt (SLinkedList& list, int idx){
 
 bool removeFirstItemWithHP (SLinkedList& list, int HP){
     
-    if (!list.size) return false;
+    if (!size(list)) return false;
     SoldierNode* ptr = list.head;
+    int count = 0;
     while (1)
     {
         if (ptr->data.HP == HP)
-        {
-            SoldierNode* nextNode = ptr->next->next;
-            delete ptr->next;
-            ptr->next = nextNode;
-            list.size--;
-            return true;
-        }
+            return removeAt(list, count);
         if (ptr->next == NULL) return false;
         else ptr = ptr->next;
+        count++;
     }
 }
 
@@ -107,6 +109,7 @@ int indexOf(SLinkedList& list, Soldier soldier){
     //Find index of soldier (start from 0)
     //Return -1 if the soldier does not exist
     //TODO
+    if (!size(list)) return -1;
     int count = 0;
     SoldierNode* ptr = list.head;
     while (1)
@@ -122,11 +125,8 @@ int indexOf(SLinkedList& list, Soldier soldier){
     return -2;
 }
 
-int size(SLinkedList& list){   
-    return list.size;
-}
-
 void clear(SLinkedList& list){
+    if (!list.head) return;
     list.size = 0;
     while (1)
     {
@@ -172,6 +172,7 @@ bool setHPAt(SLinkedList& list, int HP, int pos){
 }
 
 bool contains (SLinkedList& list, Soldier soldier){
+    if (!size(list)) return false;
     SoldierNode* ptr = list.head;
     while (1)
     {

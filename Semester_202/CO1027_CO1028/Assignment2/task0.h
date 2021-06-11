@@ -25,7 +25,8 @@ void solveTask0 (string filename){
     int task0;
     try
     {
-        task0 = stoi(tmp);
+        if(task0 = stoi(tmp));
+        else throw 505;
     }
     catch (...)
     {
