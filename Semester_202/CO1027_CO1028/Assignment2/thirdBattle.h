@@ -27,7 +27,6 @@ bool push(Array& array, Soldier soldier){
 bool pop(Array& array){
     //Return true if pop successfully, false otherwise
     //TODO
-    
     return removeAt(array, array.size - 1);
 }
 
@@ -55,7 +54,8 @@ bool dequeue(SLinkedList& list){
 
 Soldier front(SLinkedList& list){
     //TODO
-    if (empty(list)) return Soldier();
+    if (empty(list)) return Soldier(); // return this if cannot get front
+    return list.head->data;
 }
 
 //////////////////////////////////////////////////////

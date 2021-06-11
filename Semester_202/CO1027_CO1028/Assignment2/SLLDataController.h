@@ -111,7 +111,6 @@ int indexOf(SLinkedList& list, Soldier soldier){
     SoldierNode* ptr = list.head;
     while (1)
     {
-        //Operator== (const Soldier& x, const Soldier& y); ?
         if (ptr->data.HP == soldier.HP && 
             ptr->data.ID == soldier.ID && 
             ptr->data.isSpecial == soldier.isSpecial)
