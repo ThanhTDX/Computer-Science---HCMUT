@@ -36,12 +36,14 @@ void ensureCapacity(Array& array, int newCap) {
         //Copy the data of old array to new array
         for (int i = 0; i < array.capacity; i++)
         {
-            array.arr[i] = temp[i];
+            temp[i] = array.arr[i];
         }
         //Delete the old array
         delete[] array.arr;
         //Assign the pointer to new array
         array.arr = temp;
+        //Update capacity
+        array.capacity = newCap;
     }
     else;
 }
@@ -58,44 +60,36 @@ void initArray (Array& array, int cap){
 }
 
 bool insertAt(Array& array, Soldier element, int pos){
-    if (pos < 0 || pos > array.size || array.capacity <= 0) return false;
-    array.size++;
+    if (pos < 0 || pos > array.size || array.arr == NULL) return false;
+    
     //Since we add new element, must check if size > capacity
+    array.size++;
     ensureCapacity(array, (array.capacity * 3) / 2 + 1);
     
     //move the elements on pos to the right, and add it.
-    for (int tmpSize = array.size - 1; tmpSize >= pos; tmpSize--)
-    {
-        array.arr[tmpSize + 1] = array.arr[tmpSize];
-    }
+    for (int idx = array.size - 1; idx > pos; idx--)
+        array.arr[idx] = array.arr[idx-1];
     array.arr[pos] = element;
-
+    
     return true;
-}
+};
 
 bool removeAt (Array& array, int idx){
     if (idx < 0 || idx > array.size - 1 || empty(array)) return false;
-    for (int tmpSize = idx; tmpSize < array.size; tmpSize++)
-    {
-        array.arr[tmpSize - 1] = array.arr[tmpSize];
-    }
     array.size--;
+    if (array.size == 0);
+
+    else for (int i = idx + 1; i <= array.size; i++)
+        array.arr[i-1] = array.arr[i];
     return true;
 }
 
 bool removeFirstItemWithHP (Array& array, int HP){
     if (empty(array)) return false;
-    for (int tmp = 0; tmp < array.size; tmp++)
+    for (int count = 0; count < array.size; count++)
     {
-        if (array.arr[tmp].HP == HP)
-        {
-            for (int tmpSize = tmp; tmpSize < array.size; tmpSize++)
-            {
-                array.arr[tmpSize - 1] = array.arr[tmpSize];
-            }
-            array.size--;
-            return true;
-        }
+        if (array.arr[count].HP == HP)
+            return removeAt(array, count);
     }
     return false;
 }

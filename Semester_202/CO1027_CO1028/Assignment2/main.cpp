@@ -28,17 +28,17 @@ int main(int argc, const char * argv[]) {
     cout << "TASK 0:" << endl;
     solveTask0("testcase0.txt");
     
-    //cout << "TASK 1:" << endl;
-    //solveTask1(testcase1);
-    //
-    //cout << "TASK 2:" << endl;
-    //solveTask2(testcase2);
-    //
-    //cout << "TASK 3:" << endl;
-    //solveTask3(testcase3);
-    //
-    //cout << "TASK 4:" << endl;
-    //solveTask4(testcase4);
-    //
+    cout << "TASK 1:" << endl;
+    solveTask1(testcase1);
+    
+    cout << "TASK 2:" << endl;
+    solveTask2(testcase2);
+    
+    cout << "TASK 3:" << endl;
+    solveTask3(testcase3);
+    
+    cout << "TASK 4:" << endl;
+    solveTask4(testcase4);
+    
     return 0;
 }

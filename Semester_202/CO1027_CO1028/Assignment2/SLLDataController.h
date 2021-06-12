@@ -38,23 +38,23 @@ int size(SLinkedList& list){
 }
 
 bool insertAt (SLinkedList& list, Soldier element, int pos){
-    if (pos < 0 || pos > list.size - 1) return false;
+    if (pos < 0 || pos > list.size) return false;
+
     list.size++;
     SoldierNode* newSoldier = new SoldierNode(element, NULL);
-    //Check if pos is 0 - insert at first element.
+    //Check if pos is 0 - insert at head.
     if (pos == 0)
     {
         newSoldier->next = list.head;
         list.head = newSoldier;
         return true;
     }
-
-    //Create a pointer to move
+    
     SoldierNode* ptr = list.head;
-    while (pos > 0)
+    while (pos > 1)
     {
-        ptr = ptr->next;
         pos--;
+        ptr = ptr->next;
     }
     newSoldier->next = ptr->next;
     ptr->next = newSoldier;
