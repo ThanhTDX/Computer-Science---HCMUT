@@ -21,7 +21,15 @@ void solveTask2 (string filename){
     ifstream file(filename);
     string tmp = "";
     getline(file, tmp);
-    int task2 = stoi(tmp);
+    int task2;
+    try
+    {
+        if (task2 = stoi(tmp));
+    }
+    catch (...)
+    {
+        std::cout << "tmp is not an integer";
+    }
     
     while(task2){
         vector<string> cmd;
