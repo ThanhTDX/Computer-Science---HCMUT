@@ -15,21 +15,24 @@ class Integer
 private:
     int val;
 public:
-    Integer();
+    Integer() = default;
     Integer(int val);
     void print();
-    friend Integer operator+ (Integer& num);
-    friend Integer operator+ (int num);
+    Integer operator+(Integer num);
+    Integer operator+(int num);
 };
 
-Integer Integer::operator+ (Integer& num)
+Integer::Integer(int val) : val(val) {};
+
+Integer Integer::operator+(Integer num)
 {
-    return Integer(val + num.val);
+    return Integer(this->val + num.val);
 }
-Integer Integer::operator+ (int num)
+Integer Integer::operator+(int num)
 {
-    return Integer(val + num);
+    return Integer(this->val + num);
 }
+
 void Integer::print() {
     cout << this->val << endl;
 }

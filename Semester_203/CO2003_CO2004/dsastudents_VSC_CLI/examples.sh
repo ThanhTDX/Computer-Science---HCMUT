@@ -27,3 +27,11 @@ echo "Triangle program:"
 echo "\n"
 echo "Polyline program:"
 ./examples/bin/polyline
+
+echo "\n"
+echo "lecture1 program:"
+./examples/src/lecture1/lecture1
+
+echo "\n"
+echo "pointer program:"
+./examples/src/lecture1/pointer

@@ -29,21 +29,21 @@ public:
 
 Book::Book(const char* newName) 
 {
-    this->name = new char[80];
-    strcpy(this->name, newName);
+    name = new char[80];
+    strcpy(name, newName);
 }
 
 Book::~Book()
 {
-    delete this->name;
+    delete name;
 }
 
 void Book::display() {
-    cout << "Book: " << this->name << endl;
+    cout << "Book: " << name << endl;
 }
 
 char* Book::getName() {
-    return this->name;
+    return name;
 }
 
 int main() {

@@ -36,12 +36,12 @@ void Coordinate::setY(float y)
 
 float Coordinate::getX()
 {
-    return this->x;
+    return x;
 }
 
 float Coordinate::getY()
 {
-    return this->y;
+    return y;
 }
 
 float Coordinate::distanceTo(Coordinate& point)

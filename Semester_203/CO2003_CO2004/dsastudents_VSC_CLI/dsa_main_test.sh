@@ -5,7 +5,7 @@ echo "##############             (unittest for C++: doctest)              ######
 echo "###################################################################################"
 
 echo "[1] removing previous output ..."
-rm -f ./dsacpp/dsa_main_test
+rm -f ./dsa_main_test
 
 echo "[2] building DSACPP, please wait ..."
 g++ ./dsacpp/dsa_main_test.cpp ./dsacpp/src/geom/*.cpp -I ./dsacpp/include -I ./doctest -o dsa_main_test
