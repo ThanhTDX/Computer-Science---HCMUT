@@ -1,0 +1,1 @@
+Class B:V3{$r(){}Var $IM,_,$_1Y:Array [Int ,26];}Class p2_T_:_2{Constructor (_:_Y){} }Class _:_{Constructor (d,_:K){}Var _:_f_;}Class B:_{_g_(_,_6,__:Pf){New _()._();} }

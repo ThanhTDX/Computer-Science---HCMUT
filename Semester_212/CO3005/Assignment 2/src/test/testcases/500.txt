@@ -1,0 +1,1 @@
+Class J:f{___(){}Val _0U:Array [Array [Boolean ,1],0XE3];Var U:Array [Float ,0B10101];Constructor (_,v:Array [Array [Array [Int ,0X2],0B1],18];KH22:Float ;_:R__5){}Val _:Array [String ,0b11];}Class _{}

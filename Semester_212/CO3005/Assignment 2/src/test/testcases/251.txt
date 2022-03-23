@@ -1,0 +1,1 @@
+Class h{Var _65X,$y_SU_,_I0,$A:Float ;Constructor (){ {}{} }Var w8_Q:Array [Array [Array [Boolean ,03],0X12],4];Val v__:Array [Array [Int ,0B10010],056];Var _4D:Array [Array [Array [Int ,0X12],0b1011111],0X12];}

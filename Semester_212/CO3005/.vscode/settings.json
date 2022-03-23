@@ -1,0 +1,7 @@
+{
+    "python.analysis.extraPaths": [
+        "./practice/q1/target/main/mp/parser",
+        "./practice/q1/src/main/mp/utils",
+        "./Assignment 2/target/main/d96/parser"
+    ]
+}

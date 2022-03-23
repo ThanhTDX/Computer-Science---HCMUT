@@ -1,0 +1,1 @@
+Class F80{Var _W,$F:Array [Int ,0X2_D];Val $C:Array [Boolean ,32];Val __M:_t__;Val _:Array [String ,0B1001110];}Class _{Val R_:String ;}Class _:X7{Constructor (_X4_:E1;_:Array [Array [Int ,0x47],0b1110];_:Array [Array [Array [Array [Float ,02_00],0103],5_53],0b1110]){} }

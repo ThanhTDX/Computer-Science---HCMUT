@@ -1,0 +1,1 @@
+Class k:_{Val _6z:w;Var $83:Array [Array [Array [Float ,35],7],02_3_3];}Class _:_{Destructor (){}Val _0:Array [Array [Array [Array [Boolean ,35],0b1_0],01],03];Var $b2,$_:String ;Var __4w,_l,S,$6:_;}Class a_{Var $9:Array [Int ,0B1_0011100_1];}Class ____C:___{}

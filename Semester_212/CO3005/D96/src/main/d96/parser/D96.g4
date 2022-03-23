@@ -38,6 +38,6 @@ SEMI: ';';
 
 WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
 
-ERROR_CHAR: .;
-UNCLOSE_STRING: .;
+ERROR_TOKEN: .;
+UNCLOSED_STRING: .;
 ILLEGAL_ESCAPE: .;

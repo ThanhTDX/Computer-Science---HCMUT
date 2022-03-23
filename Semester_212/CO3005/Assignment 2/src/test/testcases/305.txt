@@ -1,0 +1,1 @@
+Class C{Val _:Int ;Var $_L,j,_:Boolean ;$_(A_,_:Boolean ;_:Array [Array [String ,4_2],0b1];D2u,_,p7:Array [Array [Array [Array [Int ,0X8_4],0b1],0X39],55];I:Boolean ){}$_(_:Array [Float ,07];J,B_vB_,L5oCh,a:Array [Array [String ,027],0x15];c7iP_3,e:Int ){} }Class v_:_{}

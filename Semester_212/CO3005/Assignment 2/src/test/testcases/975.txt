@@ -1,0 +1,1 @@
+Class niA{Var $_,Z6JM,_:Array [Array [Array [Array [Float ,0b1],1_5_50_3_0_0_0],0X26],37];Constructor (__Ffzh,__6,z_:Float ){}Var $_R:Array [Array [Array [String ,07],3024_9_9],0x8];}

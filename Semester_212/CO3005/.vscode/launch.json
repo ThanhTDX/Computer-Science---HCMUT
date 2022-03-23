@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "configurations": [
+        // {
+        //     "name": "Python: Current File",
+        //     "type": "python",
+        //     "request": "launch",
+        //     "program": "${file}",
+        //     "console": "integratedTerminal"
+        // }
+        {
+            "name": "Debug ANTLR4 grammar",
+            "type": "antlr-debug",
+            "request": "launch",
+            "input": "practice/q2/src/test/testcases/300.txt",
+            "grammar": "practice/q2/src/main/mp/parser/MP.g4",
+            //"actionFile": "antlr-4.9.3-complete.jar",
+            "startRule": "start",
+            "printParseTree": true,
+            "visualParseTree": true
+        }
+    ]
+}

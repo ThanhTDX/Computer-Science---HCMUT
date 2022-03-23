@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./practice/bkool/src/test"
+    ]
+    
+}

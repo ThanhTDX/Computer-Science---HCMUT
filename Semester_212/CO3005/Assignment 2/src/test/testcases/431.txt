@@ -1,0 +1,1 @@
+Class b{Constructor (__2,A_:Boolean ;g_:Boolean ;_:Int ;_,f:Array [Array [Int ,0b10111],9_2];z:Array [Array [Int ,0b10],4_36];_,_d,x:Array [Array [Float ,0B1_1_1],0X57];Pp66__:Array [Array [Array [Float ,0B1010001],58],0x6];A,___,_C1D_t,_,VM6:Array [Array [Int ,0x39],0x39]){} }Class _{}

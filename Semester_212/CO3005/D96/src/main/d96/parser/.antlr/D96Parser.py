@@ -1,4 +1,4 @@
-# Generated from /Users/duytran/Desktop/212/ppl/assignment/initial/src/main/d96/parser/D96.g4 by ANTLR 4.8
+# Generated from /home/thanh792001/Computer-Science---HCMUT/Semester_212/CO3005/D96/src/main/d96/parser/D96.g4 by ANTLR 4.8
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -42,8 +42,8 @@ class D96Parser ( Parser ):
                      "<INVALID>", "'('", "')'", "'{'", "'}'", "';'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "INTTYPE", "VOIDTYPE", "ID", 
-                      "INTLIT", "LB", "RB", "LP", "RP", "SEMI", "WS", "ERROR_CHAR", 
-                      "UNCLOSE_STRING", "ILLEGAL_ESCAPE" ]
+                      "INTLIT", "LB", "RB", "LP", "RP", "SEMI", "WS", "ERROR_TOKEN", 
+                      "UNCLOSED_STRING", "ILLEGAL_ESCAPE" ]
 
     RULE_program = 0
     RULE_mptype = 1
@@ -65,8 +65,8 @@ class D96Parser ( Parser ):
     RP=9
     SEMI=10
     WS=11
-    ERROR_CHAR=12
-    UNCLOSE_STRING=13
+    ERROR_TOKEN=12
+    UNCLOSED_STRING=13
     ILLEGAL_ESCAPE=14
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):

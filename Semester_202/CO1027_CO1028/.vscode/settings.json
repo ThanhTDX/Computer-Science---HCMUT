@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "iosfwd": "cpp"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [{
+            "scope": "string.quoted.double.cpp",
+            "settings": {
+                "foreground": "#ff0000"
+            }
+        },
+        {
+            "scope": "entity.name.type.cpp",
+            "settings": {
+                "foreground": "#ff0000"
+            }
+        }]
+        
+    }
+}

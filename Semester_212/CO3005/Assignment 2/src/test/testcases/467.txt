@@ -1,0 +1,1 @@
+Class b:A{Var $B5_,$5,$A:Array [Array [Array [Array [Boolean ,0X14],025],025],51];$5r9(e,_c,_66:Array [Array [Array [Array [Array [Array [Array [Boolean ,0B1_011],0xC_6],0b110101],0B1_0],0X14],0b110101],0X14]){} }Class V_{Var _:Int ;}

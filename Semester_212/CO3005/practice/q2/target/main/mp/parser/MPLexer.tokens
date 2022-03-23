@@ -1,0 +1,11 @@
+INTTYPE=1
+FLOATTYPE=2
+SEMI=3
+COMMA=4
+ID=5
+WS=6
+ERROR_CHAR=7
+'int'=1
+'float'=2
+';'=3
+','=4
